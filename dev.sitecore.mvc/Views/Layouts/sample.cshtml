@@ -1,0 +1,10 @@
+﻿@using Sitecore.Mvc
+
+<html>
+<body>
+   
+    <p>todays date is: @DateTime.Today.ToShortDateString()</p>
+
+    @Html.Sitecore().Placeholder("content")
+</body>
+</html>

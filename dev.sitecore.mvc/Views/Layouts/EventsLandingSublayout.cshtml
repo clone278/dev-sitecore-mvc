@@ -1,0 +1,45 @@
+﻿@using dev.sitecore.mvc.Models.Landing;
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<EventsLanding>
+
+
+<div class="page-header">
+    <h1>@Editable(x=> x.Title) <small></small></h1>
+</div>
+<ul class="thumbnails">
+    @foreach (var eventItem in Model.Events.OrderBy(x=>x.Date))
+    {
+    <li>
+        <div class="span1"></div>
+        <div class="span3">
+            <a title="@eventItem.Title" class="thumbnail">
+                <img src="@eventItem.FeaturedImage.Src" />
+            </a>
+        </div>
+        <div class="span7">
+            <div class="row">
+                <div class="span5">
+                    <h3><a href="@eventItem.Url">@eventItem.Title</a></h3>
+                </div>
+                <div class="span2">
+                    <p>@eventItem.Start.ToString("dd MMM yyyy hh:MM")</p>
+                </div>
+                <div class="span2">
+                    <p>@eventItem.End.ToString("dd MMM yyyy hh:MM")</p>
+                </div>
+            </div>
+            <div class="row">
+                <p class="span7">
+                    @eventItem.Abstract
+                </p>
+            </div>
+            <div class="row">
+                <div class="span7">
+                    <a title="@eventItem.Title" class="pull-right">Read More</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="span1"></div>
+    </li>
+    }
+</ul>

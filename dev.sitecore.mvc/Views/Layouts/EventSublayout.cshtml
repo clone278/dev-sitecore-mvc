@@ -1,0 +1,31 @@
+﻿@using dev.sitecore.mvc.Models.Content;
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Event>
+
+
+<div class="page-header">
+    <h1>
+        @Editable(x => x.Title)
+    </h1>
+    <small>
+        Start Date: @Editable(x => x.Start, x => x.Date.ToString("dd MMM yyyy"))
+    </small>
+    <small>
+        End Date: @Editable(x => x.End, x => x.Date.ToString("dd MMM yyyy"))
+    </small>
+</div>
+
+@Editable(x => x.MainBody)
+
+@if (IsInEditingMode)
+{
+    <div class="well">
+        <h3>Additional fields</h3>
+        <dl>
+            <dt>Abstract</dt>
+            <dd>
+                @Editable(x => x.Abstract)
+            </dd>
+        </dl>
+    </div>
+}
+

@@ -1,0 +1,31 @@
+﻿@using Glass.Mapper.Sc;
+@using dev.sitecore.mvc.Models.Landing
+@{
+    var context = new SitecoreContext();
+    var homepageModel = context.GetCurrentItem<Homepage>();
+}
+<div class="highlight">
+    Model: @homepageModel.Title
+    <br />
+    Make: @homepageModel.MainBody
+</div>
+
+<div class="span6">
+    <h3>Featured News</h3>
+    <ul class="thumbnails">
+        @foreach (var news in homepageModel.News)
+        {
+        <li class="span3">
+            <div class="thumbnail">
+                <img src="@news.FeaturedImage.Src" alt="@news.FeaturedImage.Alt">
+                <h4>
+                    <a href="@news.Url">
+                        @news.Title
+                    </a>
+                </h4>
+                <p>@news.Abstract</p>
+            </div>
+        </li>
+        }
+    </ul>
+</div>

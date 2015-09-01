@@ -1,0 +1,18 @@
+﻿@using Glass.Mapper.Sc;
+@using dev.sitecore.mvc.Models.Misc
+@{
+    var context = new SitecoreContext();
+    var menuItemModel = context.GetCurrentItem<MenuItem>();
+}
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="@menuItemModel.Url">@menuItemModel.Title</a>
+        <ul class="nav">
+            @foreach (var item in menuItemModel.Children)
+            {
+                <li><a href="@item.Url">@item.Title</a></li>
+            }
+        </ul>
+    </div>
+</div>

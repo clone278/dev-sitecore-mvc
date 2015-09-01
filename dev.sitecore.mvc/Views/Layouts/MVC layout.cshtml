@@ -1,0 +1,21 @@
+﻿@using Sitecore.Mvc
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/bootstrap.css")" />
+</head>
+<body>
+    
+    <!-- main content -->
+    @Html.Sitecore().Placeholder("content")
+    <!--// main content -->
+
+    <!-- Css Register -->
+    @Html.Sitecore().ViewRendering("/Views/Shared/GeneralScripts.cshtml")
+    <!--// Css Register -->
+
+</body>
+</html>

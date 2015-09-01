@@ -1,0 +1,8 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="dev.sitecore.mvc" UserName="sitecore\admin" IsRemoteSitecore="False" />
+  </PropertyGroup>
+  <File Include="/Views/Layouts/Featured Car.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{C211613E-F7A3-4A3B-BEC7-CD36A4FA117C}</Item>
+  </File>
+</Project>
